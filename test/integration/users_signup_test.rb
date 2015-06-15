@@ -9,10 +9,12 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                email: "user@invalid",
                                password:              "foo",
                                password_confirmation: "bar" }
-    end
+ end
+    
     assert_template 'users/new'
     assert_select 'div#<CSS id for error explanation>'
     assert_select 'div.<CSS class for field with error>'
+  
   end
   
   test "valid signup information" do
@@ -28,3 +30,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   end
   
 end
+  # test "the truth" do
+  #   assert true
+  # end
